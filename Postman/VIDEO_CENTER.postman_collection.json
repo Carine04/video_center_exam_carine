@@ -1,0 +1,436 @@
+{
+	"info": {
+		"_postman_id": "e6e422cd-95c8-48b7-a66a-10c6b8f44efb",
+		"name": "VIDEO_CENTER",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23553246"
+	},
+	"item": [
+		{
+			"name": "Create user 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"idUser1\", pm.response.json().id);\r",
+							"\r",
+							"pm.test(\"Status test created\", function(){\r",
+							"    pm.response.to.have.status(201);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/ld+json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"john@cfitech.be\",\r\n  \"password\": \"$2y$13$t6G0eMzNsJom35tMiGE4Gumk4.7Vln7.K09xQ9eca/Au93GWWB9wO\",\r\n  \"firstname\": \"John\",\r\n  \"lastname\": \"Lips\",\r\n  \"isVerified\": true\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/api/users",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create user 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"idUser2\", pm.response.json().id);\r",
+							"\r",
+							"pm.test(\"Status test created\", function(){\r",
+							"    pm.response.to.have.status(201);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/ld+json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"paul@cfitech.be\",\r\n  \"password\": \"$2y$13$t6G0eMzNsJom35tMiGE4Gumk4.7Vln7.K09xQ9eca/Au93GWWB9wO\",\r\n  \"firstname\": \"Paul\",\r\n  \"lastname\": \"Braun\",\r\n  \"isVerified\": true\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/api/users",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create user 3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"idUser3\", pm.response.json().id);\r",
+							"\r",
+							"pm.test(\"Status test created\", function(){\r",
+							"    pm.response.to.have.status(201);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/ld+json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"julien@cfitech.be\",\r\n  \"password\": \"$2y$13$t6G0eMzNsJom35tMiGE4Gumk4.7Vln7.K09xQ9eca/Au93GWWB9wO\",\r\n  \"firstname\": \"Julien\",\r\n  \"lastname\": \"Julien\",\r\n  \"isVerified\": true\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/api/users",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "con",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list of user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status list user\", function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/ld+json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/users",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update user 1 with PUT",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status updated\", function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/ld+json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"firstname\": \"Marie\",\r\n  \"lastname\": \"Padu\"\r\n\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/api/users/{{idUser1}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"{{idUser1}}"
+					],
+					"query": [
+						{
+							"key": "co",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create video for user 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"idLastVideo\", pm.response.json().id);\r",
+							"\r",
+							"\r",
+							"pm.test(\"Status test created\", function(){\r",
+							"    pm.response.to.have.status(201);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/ld+json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Street fighter 6\",\r\n  \"description\": \"Voici un pin de street fighter 6\",\r\n  \"videoLink\": \"https://www.youtube.com/embed/P1_PWsze6YY\",\r\n  \"user\": \"api/users/{{idUser1}}\"\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/api/videos",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"videos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create video for user 3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"Status test created\", function(){\r",
+							"    pm.response.to.have.status(201);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/ld+json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Commando\",\r\n  \"description\": \"Voici un pin de commande\",\r\n  \"videoLink\": \"https://www.youtube.com/embed/fnRoGF3VNpk\",\r\n  \"user\": \"api/users/{{idUser3}}\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "{{url}}/api/videos",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"videos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update video for user 1 with PATCH",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status updated\", function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/merge-patch+json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Musique\"\r\n \r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/api/videos/{{idLastVideo}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"videos",
+						"{{idLastVideo}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete user 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"id\",null);\r",
+							"\r",
+							"\r",
+							"pm.test(\"Status test deleted user\", function(){\r",
+							"    pm.response.to.have.status(204);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/api/users/{{idUser2}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"{{idUser2}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list of video",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status list video\", function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/ld+json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/videos",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"videos"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
